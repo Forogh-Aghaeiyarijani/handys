@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["handys-1.onrender.com", "127.0.0.1", "localhost"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://handys-1.onrender.com",
+]
+
+
 
 
 # Application definition
