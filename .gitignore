@@ -8,7 +8,6 @@ venv/
 myenv/
 
 # Django
-/media/
 /static_root/
 *.env
 .DS_Store
