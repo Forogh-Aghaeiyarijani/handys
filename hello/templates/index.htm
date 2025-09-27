@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-4">
+    <h1 class="text-center mb-4">Our Services</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for service in services %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                {% if service.image %}
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.name }}</h5>
+                    <p class="card-text">{{ service.description|default:"No description available." }}</p>
+                    <p class="card-text"><small class="text-muted">Price: ${{ service.price }}</small></p>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'book_service_with_id' service.id %}" class="btn btn-primary">Book Now</a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-primary">Book Now</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p class="text-center">No services available yet.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
