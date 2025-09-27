@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="mb-4">How do you want to use Handy Services?</h1>
+            <p class="lead mb-5">Choose the option that best describes you:</p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">I want to hire a handyman</h5>
+                            <p class="card-text">Find skilled professionals for your home repair and service needs.</p>
+                            <a href="{% url 'client_signup' %}" class="btn btn-primary mt-3">Sign Up as Client</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">I am a handyman looking for jobs</h5>
+                            <p class="card-text">Offer your services, manage bookings, and grow your client base.</p>
+                            <a href="{% url 'handyman_signup' %}" class="btn btn-success mt-3">Sign Up as Handyman</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-5">Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
